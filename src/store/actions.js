@@ -32,3 +32,9 @@ export const fetchDataRequest = (isoCode) => ({
     payload: name,
   });
   
+
+  export const setErrorMessage = (error) => ({
+    type: 'SET_ERROR_MESSAGE',
+    payload: error,
+  });
+  

@@ -7,6 +7,7 @@ const initialState = {
   countryName: '',
   spinner: false,
   isOpen: false,
+  error: ''
 }
 
 const dataReducer = (state = initialState, action) => {
@@ -38,6 +39,11 @@ const dataReducer = (state = initialState, action) => {
       return {
         ...state,
         countryName: action.payload,
+      };
+    case 'SET_ERROR_MESSAGE':
+      return {
+        ...state,
+        error: action.payload,
       };
     default:
       return state;
