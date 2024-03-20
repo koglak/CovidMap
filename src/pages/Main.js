@@ -2,6 +2,7 @@ import World from '@svg-maps/world';
 import { SVGMap } from 'react-svg-map';
 import "react-svg-map/lib/index.css";
 import MainLayout from '../layouts/MainLayout';
+import "../styles/map.css"
 
 function Main() {
     return (

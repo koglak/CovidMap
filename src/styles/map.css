@@ -1,0 +1,17 @@
+:root {
+  --map-fill: #000;
+  --map-hover: #444;
+  --map-outline-color: var(--map-hover);
+}
+
+.svg-map__location,
+.svg-map__location:focus {
+  fill: var(--map-fill) !important;
+  stroke: var(--map-outline-color);
+}
+
+.svg-map__location:hover,
+.svg-map__location:active {
+  fill: var(--map-hover) !important;
+}
+
