@@ -1,15 +1,19 @@
-import logo from './logo.svg';
-import './App.css';
-import World from '@svg-maps/world';
-import { SVGMap } from 'react-svg-map';
-import "react-svg-map/lib/index.css";
+import React from 'react';
+import {
+  BrowserRouter,
+  Routes,
+  Route,
+} from "react-router-dom";
+
+import Main from './pages/Main';
 
 function App() {
   return (
-    <div className="App">
-          <SVGMap map={World} />
-
-    </div>
+      <BrowserRouter>
+          <Routes>  
+              <Route path="/" element={ <Main/>} > </Route>
+          </Routes>
+      </BrowserRouter>
   );
 }
 
