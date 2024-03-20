@@ -9,7 +9,7 @@ export const countries = [
     },
     {
         "iso": "USA",
-        "name": "US"
+        "name": "United States"
     },
     {
         "iso": "JPN",
