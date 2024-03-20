@@ -14,3 +14,21 @@ export const fetchDataRequest = (isoCode) => ({
     payload: error,
   });
   
+  export const showSpinner = () => ({
+    type: 'SHOW_SPINNER',
+  });
+  
+  export const hideSpinner = () => ({
+    type: 'HIDE_SPINNER',
+  });
+  
+  export const toggleModal = (isOpen) => ({
+    type: 'TOGGLE_MODAL',
+    payload: isOpen,
+  });
+  
+  export const setCountryName = (name) => ({
+    type: 'SET_COUNTRY_NAME',
+    payload: name,
+  });
+  
