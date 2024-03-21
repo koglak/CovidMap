@@ -30,6 +30,18 @@ A brief description of your project.
 
 2. Open your browser and navigate to `http://localhost:3000`.
 
+## Dockerization
+
+1. Build the Docker image.
+    ```shell
+    docker build -t covid-map .
+    ```
+
+2. Run the Docker container.
+    ```shell
+    docker run -p 3000:3000 covid-map
+    ```
+
 ## Contributing
 
 Contributions are welcome! If you find any issues or have suggestions for improvements, please open an issue or submit a pull request.
