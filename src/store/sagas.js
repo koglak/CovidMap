@@ -17,8 +17,11 @@ function* fetchCovidData(action) {
             },
             params: { iso },
         });
-        console.log(response)
-        yield put(fetchDataSuccess(response.data.data[0]));
+        const data = response.data.data;
+        const total_deaths = data.reduce((acc, cur) => acc + cur.deaths, 0);
+        const total_active = data.reduce((acc, cur) => acc + cur.active, 0);
+        const last_update = data[0].last_update;
+        yield put(fetchDataSuccess({ last_update, total_active, total_deaths, data }));
     } catch (error) {
         yield put(fetchDataFailure(error.message));
         yield put(setErrorMessage("Something went wrong... Please try again later!"));

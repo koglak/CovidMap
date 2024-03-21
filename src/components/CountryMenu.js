@@ -8,8 +8,8 @@ export default function CountryMenu() {
 
     const countryName = useSelector((state) => state.countryName);
     const isOpen = useSelector((state) => state.isOpen);
-    const deaths = useSelector((state) => state.deaths);
-    const fatality_rate = useSelector((state) => state.fatality_rate);
+    const total_deaths = useSelector((state) => state.total_deaths);
+    const total_active = useSelector((state) => state.total_active);
     const last_update = useSelector((state) => state.last_update);
     const spinner = useSelector((state) => state.spinner);
     const error = useSelector((state) => state.error);
@@ -39,8 +39,8 @@ export default function CountryMenu() {
                             <div>
                                 <ul>
                                     <li><b>Last Update:</b> {last_update}</li>
-                                    <li><b>Deaths:</b> {deaths}</li>
-                                    <li><b>Fatality Rate:</b> %{fatality_rate}</li>
+                                    <li><b>Total Death:</b> {total_deaths}</li>
+                                    <li><b>Total Active:</b> {total_active}</li>
                                 </ul>
                             </div>
                 }

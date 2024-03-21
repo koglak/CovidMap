@@ -1,8 +1,9 @@
 // reducers.js
 const initialState = {
   last_update: '',
-  active: 0,
-  deaths: 0,
+  total_active: 0,
+  total_deaths: 0,
+  data: [],
   fatality_rate: 0,
   countryName: '',
   spinner: false,
@@ -16,9 +17,9 @@ const dataReducer = (state = initialState, action) => {
       return {
         ...state,
         last_update: action.payload.last_update,
-        active: action.payload.active,
-        deaths: action.payload.deaths,
-        fatality_rate: action.payload.fatality_rate,
+        total_active: action.payload.total_active,
+        total_deaths: action.payload.total_deaths,
+        data: action.payload.data,
       };
     case 'SHOW_SPINNER':
       return {
