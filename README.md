@@ -25,8 +25,8 @@ Covid Map is an website where you can view number of covid cases in countires.
 
 3. Create a `.env` file in the root directory and add the following environment variables.
     ```shell
-    REACT_APP_MAPBOX_TOKEN=<YOUR_MAP_BOX_TOKEN>
     REACT_APP_RAPIDAPI_KEY=<YOUR_RAPIDAPI_KEY>
+    REACT_APP_RAPIDAPI_HOST=<YOUR_RAPIDAPI_HOST>
     ```
 
 ## Usage
