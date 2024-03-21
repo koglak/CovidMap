@@ -9,7 +9,9 @@ const initialState = {
   spinner: false,
   isOpen: false,
   error: '',
-  tabValue: '1',  
+  tabValue: '1',
+  deathPieData: [],
+  activePieData: [],
 }
 
 const dataReducer = (state = initialState, action) => {
@@ -21,6 +23,8 @@ const dataReducer = (state = initialState, action) => {
         total_active: action.payload.total_active,
         total_deaths: action.payload.total_deaths,
         data: action.payload.data,
+        deathPieData: action.payload.deathPieData,
+        activePieData: action.payload.activePieData,
       };
     case 'SHOW_SPINNER':
       return {

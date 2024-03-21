@@ -5,10 +5,8 @@ import { useDispatch, useSelector } from 'react-redux';
 import { MdOutlineDangerous } from "react-icons/md";
 
 
-import {
-    Tab, Tabs
-} from "@mui/material";
-import { TabPanel, TabsContext } from '@mui/base';
+import { Tab, Tabs } from "@mui/material";
+import { PieChart } from '@mui/x-charts/PieChart';
 import { DataGrid } from "@mui/x-data-grid";
 import { columns } from '../data/data';
 
@@ -23,6 +21,8 @@ export default function CountryMenu() {
     const error = useSelector((state) => state.error);
     const tabValue = useSelector((state) => state.tabValue);
     const data = useSelector((state) => state.data);
+    const deathPieData = useSelector((state) => state.deathPieData);
+    const activePieData = useSelector((state) => state.activePieData);
 
     const dispatch = useDispatch();
 
@@ -62,18 +62,18 @@ export default function CountryMenu() {
                                     aria-label="country-statistics-tabs"
                                     sx={{
                                         '.MuiTab-root': {
-                                          color: 'black', 
+                                            color: 'black',
                                         },
-                                        '.Mui-selected': { 
-                                          color: 'black',
+                                        '.Mui-selected': {
+                                            color: 'black',
                                         },
-                                      }}
+                                    }}
                                     TabIndicatorProps={{ sx: { backgroundColor: 'black' } }}>
                                     <Tab label="Province Table" value="1" sx={{ color: 'black' }} />
                                     <Tab label="Charts" value="2" sx={{ color: 'black' }} />
                                 </Tabs>
 
-                                {tabValue === "1" &&
+                                {tabValue === "1" ?
                                     <DataGrid
                                         rows={data}
                                         columns={columns}
@@ -85,7 +85,35 @@ export default function CountryMenu() {
                                                 }
                                             }
                                         }}
-                                        pageSizeOptions={[5]} />}
+                                        pageSizeOptions={[5]} /> :
+                                    <div className='mt-3 text-center'>
+                                        <h4>Death Count Per Province</h4>
+                                        <PieChart
+                                            series={[
+                                                {
+                                                    data: deathPieData,
+                                                    highlightScope: { faded: 'global', highlighted: 'item' },
+                                                    faded: { innerRadius: 30, additionalRadius: -30, color: 'gray' },
+                                                },
+                                            ]}
+                                            height={200}
+                                            {...{ legend: { hidden: true } }}
+                                        />
+                                        <br></br>
+                                        <h4>Active Cases Per Province</h4>
+                                        <PieChart
+                                            series={[
+                                                {
+                                                    data: activePieData,
+                                                    highlightScope: { faded: 'global', highlighted: 'item' },
+                                                    faded: { innerRadius: 30, additionalRadius: -30, color: 'gray' },
+                                                },
+                                            ]}
+                                            height={200}
+                                            {...{ legend: { hidden: true }, title: { text: "Active Cases Per Province" } }}
+                                        />
+                                    </div>
+                                }
 
 
                             </div>
