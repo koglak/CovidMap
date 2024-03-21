@@ -1,6 +1,8 @@
 # Project Name
 
-A brief description of your project.
+Covid Map is an website where you can view number of covid cases in countires.
+
+![Covid Map](/src/images/covidmap.gif)
 
 ## Table of Contents
 
@@ -19,6 +21,12 @@ A brief description of your project.
 2. Install the dependencies.
     ```shell
     npm install --legacy-peer-deps
+    ```
+
+3. Create a `.env` file in the root directory and add the following environment variables.
+    ```shell
+    REACT_APP_MAPBOX_TOKEN=<YOUR_MAP_BOX_TOKEN>
+    REACT_APP_RAPIDAPI_KEY=<YOUR_RAPIDAPI_KEY>
     ```
 
 ## Usage
