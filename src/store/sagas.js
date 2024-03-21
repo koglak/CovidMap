@@ -17,10 +17,21 @@ function* fetchCovidData(action) {
             },
             params: { iso },
         });
-        const data = response.data.data;
-        const total_deaths = data.reduce((acc, cur) => acc + cur.deaths, 0);
-        const total_active = data.reduce((acc, cur) => acc + cur.active, 0);
-        const last_update = data[0].last_update;
+        const responseData = response.data.data;
+        const data = responseData.map((item,index) => ({
+            id: index,
+            date: item.date,
+            last_update: item.last_update,
+            active: item.active,
+            deaths: item.deaths,
+            province: item.region.province || 'Mainland',
+            active: item.active,
+            confirmed: item.confirmed,
+          }));
+
+        const total_deaths = responseData.reduce((acc, cur) => acc + cur.deaths, 0);
+        const total_active = responseData.reduce((acc, cur) => acc + cur.active, 0);
+        const last_update = responseData[0].last_update;
         yield put(fetchDataSuccess({ last_update, total_active, total_deaths, data }));
     } catch (error) {
         yield put(fetchDataFailure(error.message));

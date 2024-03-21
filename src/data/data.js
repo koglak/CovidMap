@@ -1,3 +1,38 @@
+export const columns = [
+    {
+        field: "date",
+        headerName: "Date",
+        flex: 1,
+    },
+    {
+        field: "last_update",
+        headerName: "Last Update",
+        flex: 1,
+    },
+    {
+        field: "active",
+        headerName: "Active",
+        flex: 1,
+    },
+    {
+        field: "deaths",
+        headerName: "Deaths",
+        flex: 1,
+    },
+    {
+        field: "confirmed",
+        headerName: "Confirmed",
+        flex: 1,
+    },
+    {
+        field: "province",
+        headerName: "Province",
+        flex: 1,
+    },
+
+];
+
+
 export const countries = [
     {
         "iso": "CHN",

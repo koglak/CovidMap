@@ -37,4 +37,9 @@ export const fetchDataRequest = (isoCode) => ({
     type: 'SET_ERROR_MESSAGE',
     payload: error,
   });
+
+  export const setTabValue = (value) => ({  
+    type: 'SET_TAB_VALUE',
+    payload: value,
+  });
   

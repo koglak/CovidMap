@@ -8,7 +8,8 @@ const initialState = {
   countryName: '',
   spinner: false,
   isOpen: false,
-  error: ''
+  error: '',
+  tabValue: '1',  
 }
 
 const dataReducer = (state = initialState, action) => {
@@ -45,6 +46,11 @@ const dataReducer = (state = initialState, action) => {
       return {
         ...state,
         error: action.payload,
+      };
+    case 'SET_TAB_VALUE':   
+      return {
+        ...state,
+        tabValue: action.payload,
       };
     default:
       return state;
