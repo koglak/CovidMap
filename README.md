@@ -1,4 +1,4 @@
-# Project Name
+# Covid Map
 
 Covid Map is an website where you can view number of covid cases in countires.
 
